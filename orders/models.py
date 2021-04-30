@@ -13,7 +13,7 @@ class Order(models.Model):
     total_price          = models.DecimalField(max_digits=10, decimal_places=2)
     user                 = models.ForeignKey('users.User', on_delete=models.CASCADE)
     order_status         = models.ForeignKey('OrderStatus', on_delete=models.PROTECT)
-    shipment_information = models.OneToOneField('ShipmentInformation', on_delete=models.CASCADE)
+    shipment_information = models.OneToOneField('ShipmentInformation', on_delete=models.SET_NULL, null=True)
     product              = models.ManyToManyField('products.Product', through='Cart')
 
     class Meta:
