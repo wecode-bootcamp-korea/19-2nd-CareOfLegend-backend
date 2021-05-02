@@ -3,7 +3,7 @@ from django.db import models
 class User(models.Model):
     user_code         = models.IntegerField()
     nickname          = models.CharField(max_length=45)
-    profile_image_url = models.CharField(max_length=2000)
+    profile_image_url = models.CharField(max_length=2000, null=True)
     platform          = models.ForeignKey('SocialPlatform', on_delete=models.CASCADE)
 
     class Meta:
