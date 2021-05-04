@@ -2,6 +2,7 @@ from django.db import models
 
 class Cart(models.Model):
     quantity = models.IntegerField()
+    price    = models.DecimalField(max_digits=10, decimal_places=2, null=True)
     product  = models.ForeignKey('products.Product', on_delete=models.CASCADE)
     order    = models.ForeignKey('Order', on_delete=models.CASCADE)
 
@@ -9,8 +10,8 @@ class Cart(models.Model):
         db_table = 'carts'
 
 class Order(models.Model):
-    shipment_cost        = models.DecimalField(max_digits=4, decimal_places=2)
-    total_price          = models.DecimalField(max_digits=10, decimal_places=2)
+    shipment_cost        = models.DecimalField(max_digits=4, decimal_places=2, null=True)
+    total_price          = models.DecimalField(max_digits=10, decimal_places=2, null=True)
     user                 = models.ForeignKey('users.User', on_delete=models.CASCADE)
     order_status         = models.ForeignKey('OrderStatus', on_delete=models.PROTECT)
     shipment_information = models.OneToOneField('ShipmentInformation', on_delete=models.SET_NULL, null=True)
