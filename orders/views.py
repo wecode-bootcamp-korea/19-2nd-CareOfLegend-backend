@@ -19,7 +19,7 @@ STATUS_COMPLETE     = 0
 class BasketView(View):
     @login_decorator
     def get(self,request):
-        users = request.user.id
+        users = request.user.user_code
         order = Order.objects.filter(user_id = users, order_status = STATUS_CART).first()
 
         result = [{
@@ -40,7 +40,7 @@ class BasketView(View):
             data                = json.loads(request.body)
             product_id          = data['product_id']
             product_quantity    = data.get('product_quantity',0)
-            user_id             = request.user.id
+            user_id             = request.user.user_code
 
             if not (product_id and product_quantity):
                 return JsonResponse({'MESSAGE':'DATA NOT ENTERED'}, status = 400)
@@ -77,7 +77,7 @@ class BasketDetailView(View):
     @login_decorator
     def delete(self, request, product_id):
         try:
-            user    = request.user.id
+            user    = request.user.user_code
             order   = Order.objects.get(user_id = user, order_status_id = STATUS_CART)
             product = Product.objects.get(id = product_id)
 
