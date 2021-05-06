@@ -6,4 +6,4 @@ urlpatterns=[
         path('/subcategories', ProductCategoryView.as_view()),
         path('/health-goals', HealthGoalView.as_view()),
         path('/products',ProductListView.as_view())
-        ]
+]

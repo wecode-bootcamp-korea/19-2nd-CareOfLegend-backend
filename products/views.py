@@ -98,5 +98,3 @@ class ProductListView(View):
                     } for product in products]
         
         return JsonResponse({'result' : result}, status = 200)
-
-

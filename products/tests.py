@@ -147,7 +147,6 @@ class ProductCategoryTest(TestCase):
         )
         self.assertEqual(response.status_code, 200)
 
-
 class ProductListTEST(TestCase):
     def setUp(self):
 
@@ -438,6 +437,43 @@ class ProductListTEST(TestCase):
                     ]
                 }
             )
+
+class HealthGoalTest(TestCase):
+    def setUp(self):
+        client = Client()
+        HealthGoal.objects.create(
+                name           = 'name 1',
+                icon_url       = 'icon_url 1'
+                )
+
+        HealthGoal.objects.create(
+                name           = 'name 2',
+                icon_url       = 'icon_url 2'
+                )
+
+    def tearDown(self):
+        HealthGoal.objects.all().delete()
+
+    def test_healthgoal_get_success(self):
+        client = Client()
+        response = client.get('/products/health-goals')
+
+        self.assertEqual(response.json(),{
+                "result": [
+                    {
+                        "health_goal_id": 1,
+                        "name": "name 1",
+                        "icon_url": "icon_url 1"
+                    },
+                    {
+                        "health_goal_id": 2,
+                        "name": "name 2",
+                        "icon_url": "icon_url 2"
+                    }
+                ]
+            }
+        )
+        self.assertEqual(response.status_code, 200)
 
     def test_health_goal_productlist_success(self):
         response = client.get("/products/products?health_goal=1")
