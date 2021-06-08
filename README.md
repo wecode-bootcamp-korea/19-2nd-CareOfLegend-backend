@@ -44,11 +44,12 @@ React를 사용한 맞춤형 영양제 사이트 'Care of'(https://takecareof.co
 
 ### 안정현
 - `Product Category`
+    - Nav바 내의 카테고리의 리스트 기능 구현
 - `Order`
+    - 상품 장바구니 추가,삭제 기능 구현
    
 
-🔧 기술 스택
-## 🔧 Skills
+## 🔧 기술 스택
 - ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 - ![JS](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 - ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
@@ -63,15 +64,6 @@ React를 사용한 맞춤형 영양제 사이트 'Care of'(https://takecareof.co
 - <img alt="Slack" src="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white" />
 - <img alt="AWS" src="https://img.shields.io/badge/AWS-%23FF9900.svg?&style=for-the-badge&logo=amazon-aws&logoColor=white"/>
 - <img alt="Visual Studio Code" src="https://img.shields.io/badge/VisualStudioCode-0078d7.svg?&style=for-the-badge&logo=visual-studio-code&logoColor=white"/>
-
-
-## ✏️ Blogs
-- 김현영 :
-- 김희열 :
-- 박형섭 : 
-- 서동이 :
-- 서민석 :
-- 안정현 : 
 
 
 ❗️ 레퍼런스
